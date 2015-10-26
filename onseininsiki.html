@@ -1,0 +1,76 @@
+<html>
+<head>
+</head>
+<body>
+<script language="JavaScript">
+
+function wclose(){
+window.close();
+}
+
+function wopen(){
+window.open("file:///C:/Users/thallium/Desktop/test.html" ) ;
+}
+
+
+// キーボードを押したときに実行される関数 
+  function KeyDownFunc(e){ 
+
+// 入力情報を取得 
+ // キーコード 
+ var key_code = e.keyCode;
+
+//Variable
+var ip_addr="192.168.11.1";
+
+// 出力テスト
+ document.write("code:" + key_code);
+
+//jump to URL
+
+  if(e.keyCode==38){
+  location.href ="http://150.89.234.226/arduino/FORWARD/1";
+wopen();
+  //wclose();
+  setTimeout("wclose();",1000);
+  //setTimeout("wopen();",1000);
+//setTimeout("history.back();",2000);
+
+//history.back();
+
+  //location.href ="http://150.89.234.226/arduino/FORWARD/1";
+  
+  }
+  if(e.keyCode==40){
+  location.href ="http://150.89.234.226/arduino/BACK/1"
+  wopen();
+
+  }
+  if(e.keyCode==37){
+  location.href ="http://150.89.234.226/arduino/LEFT/1"
+  wopen();
+  }
+  if(e.keyCode==39){
+  location.href ="http://150.89.234.226/arduino/RIGHT/1"
+  wopen();
+  }
+  if(e.keyCode==32){
+  location.href ="http://150.89.234.226/arduino/STOP/1"
+  wopen();
+ }
+}
+
+ 
+
+// イベントのリッスンを開始する 
+ // イベントリスナーに対応している 
+ if(document.addEventListener){ 
+ // キーボードを押したときに実行されるイベント
+ document.addEventListener("keydown" , KeyDownFunc);
+}
+
+
+</script>
+
+</body>
+</html>
